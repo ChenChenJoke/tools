@@ -1,0 +1,21 @@
+安装Sublime text 3插件很方便，可以直接下载安装包解压缩到Packages目录（菜单->preferences->packages）。
+
+使用Package Control组件安装
+也可以安装package control组件，然后直接在线安装：
+
+按Ctrl+`调出console（注：安装有QQ输入法的这个快捷键会有冲突的，输入法属性设置-输入法管理-取消热键切换至QQ拼音）
+粘贴以下代码到底部命令行并回车：
+import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())
+重启Sublime Text 3。
+如果在Perferences->package settings中看到package control这一项，则安装成功。
+顺便贴下Sublime Text2 的代码
+
+import urllib2,os; pf='Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler( ))); open( os.path.join( ipp, pf), 'wb' ).write( urllib2.urlopen( 'http://sublime.wbond.net/' +pf.replace( ' ','%20' )).read()); print( 'Please restart Sublime Text to finish installation')
+ 
+ 
+
+用Package Control安装插件的方法：
+
+按下Ctrl+Shift+P调出命令面板
+输入install 调出 Install Package 选项并回车，然后在列表中选中要安装的插件。
+
